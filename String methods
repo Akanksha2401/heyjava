@@ -1,0 +1,37 @@
+import java.lang.String;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+      String palindrome="Able Was Saw ebla";
+      String palindrome1="Able Was Saw ebla";
+      int len=palindrome.length();
+      
+      // making char array and storing elements for reversing
+      char[] tempCharArray=new char[len];
+      char[] CharArray= new char[len];
+
+      palindrome.getChars(0,len,tempCharArray,0);
+      for(int j=0;j<len;j++){
+        CharArray[j]=tempCharArray[len-1-j];
+      }
+      String reversed=new String(CharArray);
+
+      System.out.println("Orignal:"+palindrome);
+      System.out.println("Reversed:"+reversed);
+
+      //replaceAll method
+      String s2=palindrome.replaceAll("A","Hello");
+      System.out.println(s2);
+// Now we are trying to check whether both the strings are equal or not with/without ignorecase method.
+  if(reversed.equalsIgnoreCase(palindrome))
+    System.out.println("Same");
+    else
+    System.out.println("Different");
+  if(palindrome1.equalsIgnoreCase(palindrome))
+    System.out.println("Same");
+    else
+    System.out.println("Different");
+
+  }
+}
