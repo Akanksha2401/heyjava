@@ -1,0 +1,26 @@
+import java.lang.String;
+
+class Main {
+  public static void main(String[] args) {
+   //To find a substring in a given String
+   String SearchMe="Green Eggs and Ham";//string to be searched in
+   String FindMe="Eggs";//string to be searched
+
+  int SearchMeLength= SearchMe.length();
+  int FindMeLength=FindMe.length();
+   
+  //flag used
+  boolean FoundIt=false;
+
+  for(int i=0;i<(SearchMeLength-FindMeLength);i++){
+    FoundIt=true;
+    if(SearchMe.regionMatches(i,FindMe,0,FindMeLength)){
+    System.out.println("Found as "+SearchMe.substring(i,i+FindMeLength));
+    break;
+    }
+  if(!FoundIt)
+  System.out.println("Not found");
+  }
+
+  }
+}
